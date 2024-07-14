@@ -6,6 +6,9 @@ TagManager:
   tags:
   - DrawCube
   - Pen
+  - character
+  - answer
+  - miss
   layers:
   - Default
   - TransparentFX

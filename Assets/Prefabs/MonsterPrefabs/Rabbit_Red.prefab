@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 6774806323019697367}
   - component: {fileID: 7731615386633935763}
   - component: {fileID: 949204254796938043}
+  - component: {fileID: 1542956370312345264}
   m_Layer: 0
   m_Name: Rabbit_Red
   m_TagString: Untagged
@@ -379,6 +380,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!135 &1542956370312345264
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742217301388996325}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.011
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!1 &2226599231569057581
 GameObject:
   m_ObjectHideFlags: 0

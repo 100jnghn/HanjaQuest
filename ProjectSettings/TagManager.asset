@@ -9,6 +9,9 @@ TagManager:
   - character
   - answer
   - miss
+  - canvas
+  - Monster
+  - AttackTarget
   layers:
   - Default
   - TransparentFX

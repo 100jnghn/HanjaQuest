@@ -30,7 +30,7 @@ public class SpawnEnemy : MonoBehaviour
         int randomIdx = Random.Range(0, enemy.Length);
 
 
-        GameObject newRabbit = Instantiate(enemy[randomIdx], originPos.position, originPos.rotation);
-        rabbitGameManger.enqueue(newRabbit);
+        Instantiate(enemy[randomIdx], originPos.position, originPos.rotation);
+        //rabbitGameManger.enqueue(newRabbit);
     }
 }

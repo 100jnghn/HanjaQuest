@@ -7,15 +7,29 @@ public class Monster : MonoBehaviour
 {
     NavMeshAgent navigation;
     Animator animator;
+
+    string[] characterArr =
+    {
+        "달월",
+        "불화",
+        "물수",
+        "나무목",
+        "불금",
+        "흙토",
+        "날일"
+    };
+
     public GameObject target;
+    public string ownCharacter;    
 
 
-    void Start()
+    void Awake()
     {
         navigation = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
         target = GameObject.Find("TargetPosition");
+        ownCharacter = characterArr[Random.Range(0, characterArr.Length)];
     }
 
     void Update()

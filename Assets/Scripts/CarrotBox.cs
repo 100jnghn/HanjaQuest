@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CarrotBox : MonoBehaviour
 {
+    public RabbitGameManager rabbitGameManager;
+
     public int carrotCount = 10;    // 지켜야 할 당근의 수  // 0 되면 종료
     public float timer = 0f;        // 시간 재는 변수
     public float limitTime = 3f;    // 3초 지나면 당근--
@@ -27,7 +29,9 @@ public class CarrotBox : MonoBehaviour
 
             if (timer > limitTime)
             {
-                Destroy(collision.gameObject);
+                Destroy(collision.gameObject);  // 토끼 제거
+                rabbitGameManager.dequeue();    // 큐에서 토끼 obj 제거
+
                 carrotCount--;
                 timer = 0;
             }

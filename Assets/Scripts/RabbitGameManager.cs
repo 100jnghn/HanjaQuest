@@ -20,7 +20,10 @@ public class RabbitGameManager : MonoBehaviour
 
     void Update()
     {
-
+        if(monsterQ.Count == 0)
+        {
+            showingCharacter.text = "";
+        }
     }
 
     public void gameStart()
@@ -52,11 +55,14 @@ public class RabbitGameManager : MonoBehaviour
 
     void updateCharacter()
     {
-        GameObject firstMonster = monsterQ.Peek();
-        Monster nMonster = firstMonster.GetComponent<Monster>();
-        Debug.Log(nMonster.ownCharacter);
+        if (monsterQ.Count > 0)
+        {
+            GameObject firstMonster = monsterQ.Peek();
+            Monster nMonster = firstMonster.GetComponent<Monster>();
+            Debug.Log(nMonster.ownCharacter);
 
-        showingCharacter.text = nMonster.ownCharacter;
+            showingCharacter.text = nMonster.ownCharacter;
+        }       
     }
 
 }

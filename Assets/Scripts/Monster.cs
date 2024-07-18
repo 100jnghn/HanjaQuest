@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Monster : MonoBehaviour
 {
+    RabbitGameManager rabbitGameManager;
     NavMeshAgent navigation;
     Animator animator;
 
@@ -25,6 +26,7 @@ public class Monster : MonoBehaviour
 
     void Awake()
     {
+        rabbitGameManager = GameObject.Find("RabbitGameManager").GetComponent<RabbitGameManager>();
         navigation = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
@@ -32,9 +34,19 @@ public class Monster : MonoBehaviour
         ownCharacter = characterArr[Random.Range(0, characterArr.Length)];
     }
 
+    void Start()
+    {
+        rabbitGameManager.enqueue(gameObject);    
+    }
+
     void Update()
     {
         navigation.SetDestination(target.transform.position);
+    }
+
+    void OnDestroy()
+    {
+        rabbitGameManager.dequeue();    
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -30,7 +30,7 @@ public class CarrotBox : MonoBehaviour
             if (timer > limitTime)
             {
                 Destroy(collision.gameObject);  // 토끼 제거
-                rabbitGameManager.dequeue();    // 큐에서 토끼 obj 제거
+                //rabbitGameManager.dequeue();    // 큐에서 토끼 obj 제거
 
                 carrotCount--;
                 timer = 0;

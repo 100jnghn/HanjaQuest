@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage 2-1.unity
     guid: 3bddb64cd9b5b1e4abb9f985b778a4c3
   - enabled: 1
-    path: Assets/Scenes/HanjaQuest/GameScene/SelectStage1.unity
+    path: Assets/Scenes/HanjaQuest/GameScene/Stage 1/SelectStage1.unity
     guid: e07ee9ee3b84b8a4182d87725ec63363
   - enabled: 1
-    path: Assets/Scenes/HanjaQuest/GameScene/Stage1-1.unity
+    path: Assets/Scenes/HanjaQuest/GameScene/Stage 1/Stage1-1.unity
     guid: 3687952b94069ee4d9b64579f64b2fd4
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2d7dfa1ca8056bd469cc425981f3073a, type: 2}

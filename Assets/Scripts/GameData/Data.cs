@@ -6,13 +6,15 @@ using UnityEngine;
 public class Data : ScriptableObject
 {
 
-
+    public string meaning;
+    public string sound;
+    public GameObject model;
     public int totalAnswerCube;
     public int correctCube;  
     public int wrongCube;
     public int missedCube;
     public float accuracy;
-
+    
 
     void Start()
     {

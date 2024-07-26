@@ -620,15 +620,10 @@ namespace BeyondLimitsStudios
 
                 // Save the bytes to file
 
-            #if UNITY_ANDROID
-                NativeGallery.SaveImageToGallery(bytes, Path.GetDirectoryName(path), Path.GetFileName(path));
-            #else
+            
                 File.WriteAllBytes(Path.Combine(path, (name + ".png")), bytes);
                 Debug.Log("Texture saved to " + path);
-            #endif
-
-                return true;
-            }
+            
 
             /// <summary>
             /// Returns image from the board.

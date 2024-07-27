@@ -1,3 +1,4 @@
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class CubeCanvas : MonoBehaviour
@@ -6,6 +7,7 @@ public class CubeCanvas : MonoBehaviour
     public int rows = 50;
     public int columns = 50;
     public float spacing = 0.05f;
+    public GameObject startPos;
 
 
     void Start()

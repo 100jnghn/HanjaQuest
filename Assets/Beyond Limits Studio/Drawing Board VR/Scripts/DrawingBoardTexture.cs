@@ -620,10 +620,11 @@ namespace BeyondLimitsStudios
 
                 // Save the bytes to file
 
-            
+
                 File.WriteAllBytes(Path.Combine(path, (name + ".png")), bytes);
                 Debug.Log("Texture saved to " + path);
-            
+                return true;
+            }
 
             /// <summary>
             /// Returns image from the board.

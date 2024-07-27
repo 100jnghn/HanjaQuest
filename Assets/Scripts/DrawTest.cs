@@ -11,7 +11,7 @@ public class DrawTest : MonoBehaviour
     public float spacing = 0.01f;
     public GameObject image;
     public Data data;
-
+    public GameObject canvasPosObject;
     void Start()
     {
         initData();
@@ -28,11 +28,12 @@ public class DrawTest : MonoBehaviour
 
     public void GenerateCanvas()
     {
+        Vector3 canvasPos = canvasPosObject.transform.position;
         for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < columns; j++)
             {
-                Vector3 position = new Vector3(j * spacing, i * spacing, 0);
+                Vector3 position = canvasPos + new Vector3(j * spacing, i * spacing, 0);
                 Instantiate(brushCubePrefab, position, Quaternion.identity, transform);
                 image.gameObject.SetActive(true);
             }

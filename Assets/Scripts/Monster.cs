@@ -41,7 +41,14 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
-        navigation.SetDestination(target.transform.position);
+        if (rabbitGameManager.isGaming)
+        {
+            navigation.SetDestination(target.transform.position);
+        }
+        else
+        {
+            navigation.isStopped = true;
+        }
     }
 
     void OnDestroy()

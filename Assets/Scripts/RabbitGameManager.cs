@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RabbitGameManager : MonoBehaviour
 {
     public Queue<GameObject> monsterQ;  // 씬에 있는 monster를 관리하는 큐
+
+    public GameObject clearPanel;   // 클리어 시 띄우는 UI 패널
+    public GameObject failpanel;    // 실패 시 띄우는 UI 패널
 
     public GameObject spawnPoint;   // rabbit monster 스폰 위치
     public CarrotBox carrotBox;     // 당근 상자 -> 당근의 수 count 
@@ -15,7 +19,7 @@ public class RabbitGameManager : MonoBehaviour
     public Text remainTimeText;     // 남은 시간 표시하는 텍스트
     public Timer timer;             // 타이머 (남은 시간) 
 
-    bool isGaming;
+    public bool isGaming;
 
 
 
@@ -37,6 +41,9 @@ public class RabbitGameManager : MonoBehaviour
         {
             isGaming = false;
             gameOver();
+
+            // 실패 UI
+            failpanel.SetActive(true);
         }
 
         // 남은 시간 표시
@@ -46,6 +53,9 @@ public class RabbitGameManager : MonoBehaviour
         if (timer.remainTime <= 0)
         {
             gameOver();
+
+            // 클리어 UI
+            clearPanel.SetActive(true);
         }
     }
 
@@ -98,6 +108,11 @@ public class RabbitGameManager : MonoBehaviour
 
             showingCharacter.text = nMonster.ownCharacter;
         }       
+    }
+
+    public void restartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }

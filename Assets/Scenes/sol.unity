@@ -1773,6 +1773,7 @@ MonoBehaviour:
   spacing: 0.01
   image: {fileID: 301227065}
   data: {fileID: 11400000, guid: 17114c9b20e0b29408decc25c782881e, type: 2}
+  canvasPosObject: {fileID: 0}
 --- !u!1 &731141718
 GameObject:
   m_ObjectHideFlags: 0

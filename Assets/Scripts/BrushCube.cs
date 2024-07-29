@@ -24,7 +24,7 @@ public class BrushCube : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pen"))
         {
-            cubeRenderer.material.color = Color.black;
+            //cubeRenderer.material.color = Color.black;
             
             if (gameObject.tag =="answer" && flag == false)
             {

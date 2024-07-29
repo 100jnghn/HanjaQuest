@@ -306,6 +306,18 @@ MonoBehaviour:
     value: {fileID: 11400000, guid: c9120ea8e93db6748bdf726c00392818, type: 2}
   - key: "\uD759 \uD1A0"
     value: {fileID: 11400000, guid: 1fcac7fb40cdd734698d80fff5500949, type: 2}
+  - key: "\uB2EC \uC6D4"
+    value: {fileID: 11400000, guid: 122ccc1e068a1fd42a2b45bd22f3f633, type: 2}
+  - key: "\uB098\uBB34 \uBAA9"
+    value: {fileID: 11400000, guid: b0ccea78e6716da4e9ce1ebef0520450, type: 2}
+  - key: "\uBC1D\uC744 \uBA85"
+    value: {fileID: 11400000, guid: 994efcf03eda1c6489ddfdff9c5f9305, type: 2}
+  - key: "\uBB3C \uC218"
+    value: {fileID: 11400000, guid: d6d12963b2577a94db3ff3748c4569ef, type: 2}
+  - key: "\uBD88 \uAE08"
+    value: {fileID: 11400000, guid: 4a81f9692b6daa246b261178e535dc28, type: 2}
+  - key: "\uD55C \uC77C"
+    value: {fileID: 11400000, guid: cfd1374cf911ce14f80f67cfd56a8486, type: 2}
 --- !u!4 &27711046
 Transform:
   m_ObjectHideFlags: 0
@@ -3400,7 +3412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accuracy: {fileID: 1686201485}
-  data: {fileID: 11400000, guid: 17114c9b20e0b29408decc25c782881e, type: 2}
+  Gdata: {fileID: 0}
 --- !u!114 &953452193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4361,7 +4373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1256326399
 Transform:
   m_ObjectHideFlags: 0
@@ -4772,6 +4784,10 @@ MonoBehaviour:
   - {fileID: 6709102668177254740, guid: 8f2eba13dd14fdd40a05dc9ed85f46fc, type: 3}
   minSpawnTime: 7
   maxSpawnTime: 10
+  Gdata: {fileID: 11400000, guid: 2d199939f2f5d9a4cbf62af54b36e4f8, type: 2}
+  data: {fileID: 0}
+  modelSpawnPos: {fileID: 2036932764}
+  linkData: {fileID: 27711045}
 --- !u!1 &1379357430
 GameObject:
   m_ObjectHideFlags: 0
@@ -6903,8 +6919,9 @@ MonoBehaviour:
   columns: 50
   spacing: 0.01
   image: {fileID: 2056902192}
-  data: {fileID: 11400000, guid: 17114c9b20e0b29408decc25c782881e, type: 2}
+  Gdata: {fileID: 11400000, guid: 2d199939f2f5d9a4cbf62af54b36e4f8, type: 2}
   canvasPosObject: {fileID: 2036932763}
+  linkData: {fileID: 27711045}
 --- !u!114 &2036932766
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,16 +8,17 @@ public class Monster : MonoBehaviour
     RabbitGameManager rabbitGameManager;
     NavMeshAgent navigation;
     Animator animator;
+    public CurrentGameData Gdata;
 
     string[] characterArr =
     {
-        "달월",
-        "불화",
-        "물수",
-        "나무목",
-        "불금",
-        "흙토",
-        "날일"
+        "달 월",
+        "불 화",
+        "물 수",
+        "나무 목",
+        "불 금",
+        "흙 토",
+        "날 일"
     };
 
     public GameObject target;
@@ -32,6 +33,7 @@ public class Monster : MonoBehaviour
 
         target = GameObject.Find("TargetPosition");
         ownCharacter = characterArr[Random.Range(0, characterArr.Length)];
+        Gdata.HanjaName = ownCharacter;
     }
 
     void Start()

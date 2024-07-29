@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
-using static System.Net.Mime.MediaTypeNames;
-
 public class DrawTest : MonoBehaviour
 {
     public GameObject brushCubePrefab;
@@ -10,8 +9,10 @@ public class DrawTest : MonoBehaviour
     public int columns = 50;
     public float spacing = 0.01f;
     public GameObject image;
-    public Data data;
+    private Data data;
+    public CurrentGameData Gdata;
     public GameObject canvasPosObject;
+    public LinkData linkData;
     void Start()
     {
         initData();
@@ -24,6 +25,7 @@ public class DrawTest : MonoBehaviour
         data.correctCube = 0;
         data.wrongCube = 0;
         data.accuracy = 0.0f;
+
     }
 
     public void GenerateCanvas()
@@ -37,6 +39,31 @@ public class DrawTest : MonoBehaviour
                 Instantiate(brushCubePrefab, position, Quaternion.identity, transform);
                 image.gameObject.SetActive(true);
             }
+        }
+    }
+    void Update()
+    {
+        string hanjaName = Gdata.HanjaName;
+        //Debug.Log(hanjaName);
+        foreach (DictionaryEntry<string, Data> entry in linkData.hanjaDataList)
+        {
+            Debug.Log(entry.key);
+
+            if (entry.key == hanjaName)
+            {
+                Debug.Log(hanjaName+"찾았다");
+                data = entry.value;
+                break;
+            }
+        }
+
+        if (data != null)
+        {
+            Gdata.Hdata = data;
+        }
+        else
+        {
+            Debug.LogError("Data 파일 못찾음");
         }
     }
 }

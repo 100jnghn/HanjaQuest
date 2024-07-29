@@ -7,11 +7,13 @@ using TMPro;
 public class updateAccuracy : MonoBehaviour
 {
     public TextMeshProUGUI accuracy;
-    public Data data;
+    private Data data;
+    public CurrentGameData Gdata;
+
 
     void Start()
     {
-        
+        data = Gdata.Hdata;
     }
 
     // Update is called once per frame

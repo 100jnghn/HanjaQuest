@@ -830,7 +830,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0e17a39401e6c4796e1029b896535b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Gdata: {fileID: 11400000, guid: 2d199939f2f5d9a4cbf62af54b36e4f8, type: 2}
   target: {fileID: 0}
+  ownCharacter: 
 --- !u!135 &2932224645928176927
 SphereCollider:
   m_ObjectHideFlags: 0

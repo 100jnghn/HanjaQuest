@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
 using UnityEngine;
+
 public class DrawTest : MonoBehaviour
 {
     public GameObject brushCubePrefab;
@@ -9,10 +9,9 @@ public class DrawTest : MonoBehaviour
     public int columns = 50;
     public float spacing = 0.01f;
     public GameObject image;
-    private Data data;
-    public CurrentGameData Gdata;
+    public Data data;
     public GameObject canvasPosObject;
-    public LinkData linkData;
+
     void Start()
     {
         initData();
@@ -41,29 +40,5 @@ public class DrawTest : MonoBehaviour
             }
         }
     }
-    void Update()
-    {
-        string hanjaName = Gdata.HanjaName;
-        //Debug.Log(hanjaName);
-        foreach (DictionaryEntry<string, Data> entry in linkData.hanjaDataList)
-        {
-            Debug.Log(entry.key);
 
-            if (entry.key == hanjaName)
-            {
-                Debug.Log(hanjaName+"찾았다");
-                data = entry.value;
-                break;
-            }
-        }
-
-        if (data != null)
-        {
-            Gdata.Hdata = data;
-        }
-        else
-        {
-            Debug.LogError("Data 파일 못찾음");
-        }
-    }
 }

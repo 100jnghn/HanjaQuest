@@ -5,6 +5,7 @@ using UnityEngine.UI;  // UI를 사용하기 위해 필요
 
 public class HanjaModel : MonoBehaviour
 {
+    /*
     public LinkData linkData;          // 한자 데이터 연결
     public Transform modelSpawnPos;    // 모델 스폰 위치
     public Image completionImage;      // 모든 모델이 스폰된 후 나타날 이미지
@@ -69,4 +70,5 @@ public class HanjaModel : MonoBehaviour
             }
         }
     }
+    */
 }

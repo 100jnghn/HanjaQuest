@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 17114c9b20e0b29408decc25c782881e, type: 2}
+  DifficultyFactor: 0.03
 --- !u!114 &557595183551564745
 MonoBehaviour:
   m_ObjectHideFlags: 0

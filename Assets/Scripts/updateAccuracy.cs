@@ -7,8 +7,8 @@ using TMPro;
 public class updateAccuracy : MonoBehaviour
 {
     public TextMeshProUGUI accuracy;
-    private Data data;
-    public CurrentGameData Gdata;
+    public Data data; //한자데이터
+    public CurrentGameData Gdata; //지금 당장 현 게임 상태
 
 
     void Start()

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    /*
     public Button startButton; // 버튼 오브젝트
     public HanjaModel hanjaSpawner; // HanjaSpawner 오브젝트
 
@@ -19,4 +20,5 @@ public class UIController : MonoBehaviour
             hanjaSpawner.StartSpawning();
         }
     }
+    */
 }

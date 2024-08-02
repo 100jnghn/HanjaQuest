@@ -1,4 +1,4 @@
-using System.Diagnostics;
+using System;
 using UnityEngine;
 
 public class BrushCube : MonoBehaviour
@@ -7,10 +7,23 @@ public class BrushCube : MonoBehaviour
     private Renderer cubeRenderer;
     private bool flag = false;
     public float DifficultyFactor = 0.03f; //³·¾ÆÁú¼ö·Ï ½¬¿öÁü
-
+    public static Action count;
     void Start()
     {
         cubeRenderer = GetComponent<Renderer>();
+        
+    }
+    void Awake()
+    {
+        count = () => 
+        { 
+            countCubes(); 
+        };
+    }
+   
+    void countCubes()
+    {
+        Debug.Log("action¼º°ø");
         if (gameObject.tag == "answer")
         {
             cubeRenderer.material.color = Color.red;
@@ -22,7 +35,14 @@ public class BrushCube : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pen"))
+        //Debug.Log("trigger entered");
+        if (other.gameObject.CompareTag("character"))
+        {
+            Debug.Log("character entered");
+            gameObject.tag = "answer";
+            cubeRenderer.material.color = Color.red;
+        }
+        else if (other.gameObject.CompareTag("Pen"))
         {
             //cubeRenderer.material.color = Color.black;
             

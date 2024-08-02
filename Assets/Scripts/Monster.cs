@@ -8,7 +8,6 @@ public class Monster : MonoBehaviour
     RabbitGameManager rabbitGameManager;
     NavMeshAgent navigation;
     Animator animator;
-    public CurrentGameData Gdata;
 
     string[] characterArr =
     {
@@ -33,7 +32,6 @@ public class Monster : MonoBehaviour
 
         target = GameObject.Find("TargetPosition");
         ownCharacter = characterArr[Random.Range(0, characterArr.Length)];
-        Gdata.HanjaName = ownCharacter;
     }
 
     void Start()

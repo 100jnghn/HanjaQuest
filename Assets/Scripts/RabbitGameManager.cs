@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using TMPro;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -19,8 +18,10 @@ public class RabbitGameManager : MonoBehaviour
     public Text remainTimeText;     // 남은 시간 표시하는 텍스트
     public Timer timer;             // 타이머 (남은 시간) 
 
-    public bool isGaming;
+    public GameObject[] hanjas;
+    public GameObject hanjaPos;
 
+    public bool isGaming;
 
 
     void Start()
@@ -31,13 +32,13 @@ public class RabbitGameManager : MonoBehaviour
     void Update()
     {
         // 큐가 비었으면 한자 표시 X
-        if(monsterQ.Count == 0)
+        if (monsterQ.Count == 0)
         {
             showingCharacter.text = "";
         }
 
         // 당근 다 털리면 게임 종료
-        if(carrotBox.carrotCount <= 0)
+        if (carrotBox.carrotCount <= 0)
         {
             isGaming = false;
             gameOver();
@@ -81,7 +82,7 @@ public class RabbitGameManager : MonoBehaviour
         monsterQ.Enqueue(rabbit);
 
         // 큐에 처음으로 mosnter 들어옴
-        if(monsterQ.Count == 1)
+        if (monsterQ.Count == 1)
         {
             Debug.Log("MonsterQ 1");
             updateCharacter();
@@ -97,6 +98,7 @@ public class RabbitGameManager : MonoBehaviour
         }
     }
 
+
     // UI에 표시할 한자 update
     void updateCharacter()
     {
@@ -107,8 +109,34 @@ public class RabbitGameManager : MonoBehaviour
             Debug.Log(nMonster.ownCharacter);
 
             showingCharacter.text = nMonster.ownCharacter;
-        }       
+            FindHanja(nMonster.ownCharacter);
+        }
+        
+        
+
     }
+
+    void FindHanja(string name)
+    {
+        switch (name)
+        {
+            case "달 월":
+                Instantiate(hanjas[0], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                break;
+            case "불 화":
+                Instantiate(hanjas[1], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                break;
+            case "물 수":
+                Instantiate(hanjas[2], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                break;
+            default:
+                Instantiate(hanjas[3], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                break;
+        }
+        BrushCube.count();
+        //Invoke("BrushCube.count()", 1f);
+    }
+
 
     public void restartScene()
     {

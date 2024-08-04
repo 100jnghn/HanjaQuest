@@ -12,7 +12,8 @@ public class RabbitNPC : MonoBehaviour
     int index = 0;
     string[] ownText =
     {
-        "§æ§∑",
+        "µµøÕ¡‡~~~",
+        "æ»≥Á!",
         "≈‰≥¢∞° ¥Á±Ÿ¿ª æÓ¬º±∏",
         "10∞≥ ¿ÃªÛ ∏‘¿∏∏È æ»µ ",
         "√≥∏Æ«ÿ¡‡"

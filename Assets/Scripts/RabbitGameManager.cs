@@ -53,7 +53,7 @@ public class RabbitGameManager : MonoBehaviour
         }
 
         // 남은 시간 표시
-        remainTimeText.text = "남은 시간:" + ((int)timer.remainTime).ToString();
+        remainTimeText.text = "남은 시간: " + ((int)timer.remainTime).ToString();
 
         // 게임 시간 종료(클리어)
         if (timer.remainTime <= 0)

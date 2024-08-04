@@ -9,8 +9,6 @@ public class RabbitGameManager : MonoBehaviour
 {
     public Queue<GameObject> monsterQ;  // 씬에 있는 monster를 관리하는 큐
 
-    public AudioSource bgm;         // 게임 bgm
-
     public GameObject clearPanel;   // 클리어 시 띄우는 UI 패널
     public GameObject failpanel;    // 실패 시 띄우는 UI 패널
 
@@ -19,7 +17,6 @@ public class RabbitGameManager : MonoBehaviour
     public Text showingCharacter;   // UI에 표시할 monster 고유 한자
     public Text remainTimeText;     // 남은 시간 표시하는 텍스트
     public Timer timer;             // 타이머 (남은 시간) 
-    
 
     public GameObject[] hanjas;
     public GameObject hanjaPos;
@@ -69,7 +66,6 @@ public class RabbitGameManager : MonoBehaviour
         isGaming = true;
         spawnPoint.SetActive(true);
         timer.isStarting = true;
-        bgm.Play();
     }
 
     // 게임 종료 (미완)
@@ -77,7 +73,7 @@ public class RabbitGameManager : MonoBehaviour
     {
         isGaming = false;
         timer.isStarting = false;
-        bgm.Stop();
+
         Destroy(spawnPoint);
     }
 

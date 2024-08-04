@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -94,10 +95,16 @@ namespace BeyondLimitsStudios
             [SerializeField]
             [Tooltip("Reference to compute shader used for calculations. Don't change it. It should always be DrawingBoardComputeShader.")]
             private ComputeShader computeShader;
+            public static Action clearAll;
 
             private void Awake()
             {
                 Setup();
+
+                clearAll = () =>
+                {
+                    ClearBoard();
+                };
             }
 
             public void Setup()
@@ -291,7 +298,7 @@ namespace BeyondLimitsStudios
             }
 
             /// <summary>
-            /// Clears board. Sets backgroundColor on entire texture.
+            /// ss board. Sets backgroundColor on entire texture.
             /// </summary>
             public void ClearBoard()
             {

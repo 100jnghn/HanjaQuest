@@ -6,7 +6,6 @@ using UnityEngine;
 public class Data : ScriptableObject
 {
 
-    
     public int totalAnswerCube;
     public int correctCube;  
     public int wrongCube;

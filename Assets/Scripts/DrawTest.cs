@@ -14,7 +14,7 @@ public class DrawTest : MonoBehaviour
 
     void Start()
     {
-        initData();
+        //initData();
         GenerateCanvas();
     }
     public void initData()

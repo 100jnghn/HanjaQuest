@@ -8,12 +8,12 @@ public class updateAccuracy : MonoBehaviour
 {
     public TextMeshProUGUI accuracy;
     public Data data; //한자데이터
-    public CurrentGameData Gdata; //지금 당장 현 게임 상태
+    //public CurrentGameData Gdata; //지금 당장 현 게임 상태
 
 
     void Start()
     {
-        data = Gdata.Hdata;
+        //data = Gdata.Hdata;
     }
 
     // Update is called once per frame

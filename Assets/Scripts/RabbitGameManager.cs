@@ -129,8 +129,17 @@ public class RabbitGameManager : MonoBehaviour
             case "물 수":
                 Instantiate(hanjas[2], hanjaPos.transform.position, hanjaPos.transform.rotation);
                 break;
-            default:
+            case "나무 목":
                 Instantiate(hanjas[3], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                break;
+            case "쇠 금":
+                Instantiate(hanjas[4], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                break;
+            case "흙 토":
+                Instantiate(hanjas[5], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                break;
+            case "날 일":
+                Instantiate(hanjas[6], hanjaPos.transform.position, hanjaPos.transform.rotation);
                 break;
         }
         BrushCube.count();

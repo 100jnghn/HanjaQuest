@@ -41,6 +41,8 @@ public class BrushCube : MonoBehaviour
             Debug.Log("character entered");
             gameObject.tag = "answer";
             cubeRenderer.material.color = Color.red;
+            data.missedCube++;
+            data.totalAnswerCube++;
         }
         else if (other.gameObject.CompareTag("Pen"))
         {

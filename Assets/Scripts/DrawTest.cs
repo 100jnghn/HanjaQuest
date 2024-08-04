@@ -8,13 +8,13 @@ public class DrawTest : MonoBehaviour
     public int rows = 50;
     public int columns = 50;
     public float spacing = 0.01f;
-    public GameObject image;
+   // public GameObject image;
     public Data data;
     public GameObject canvasPosObject;
 
     void Start()
     {
-        initData();
+        //initData();
         GenerateCanvas();
     }
     public void initData()
@@ -36,7 +36,7 @@ public class DrawTest : MonoBehaviour
             {
                 Vector3 position = canvasPos + new Vector3(j * spacing, i * spacing, 0);
                 Instantiate(brushCubePrefab, position, Quaternion.identity, transform);
-                image.gameObject.SetActive(true);
+                //image.gameObject.SetActive(true);
             }
         }
     }

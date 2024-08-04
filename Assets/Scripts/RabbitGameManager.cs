@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using BeyondLimitsStudios.VRInteractables;
 using UnityEngine.UI;
 
 public class RabbitGameManager : MonoBehaviour
@@ -19,7 +20,9 @@ public class RabbitGameManager : MonoBehaviour
     public Timer timer;             // 타이머 (남은 시간) 
 
     public GameObject[] hanjas;
-    public GameObject hanjaPos;
+    public GameObject[] Images;
+
+    //public GameObject hanjaPos;
 
     public bool isGaming;
 
@@ -118,22 +121,51 @@ public class RabbitGameManager : MonoBehaviour
 
     void FindHanja(string name)
     {
+        for (int i = 0; i < hanjas.Length; i++)
+        {
+            hanjas[i].SetActive(false);
+            Images[i].SetActive(false);
+        }
         switch (name)
         {
             case "달 월":
-                Instantiate(hanjas[0], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                hanjas[0].SetActive(true);
+                Images[0].SetActive(true);
                 break;
             case "불 화":
-                Instantiate(hanjas[1], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                //nstantiate(hanjas[1], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                hanjas[1].SetActive(true);
+                Images[1].SetActive(true);
                 break;
             case "물 수":
-                Instantiate(hanjas[2], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                //Instantiate(hanjas[2], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                hanjas[2].SetActive(true);
+                Images[2].SetActive(true);
                 break;
-            default:
-                Instantiate(hanjas[3], hanjaPos.transform.position, hanjaPos.transform.rotation);
+            case "나무 목":
+                //Instantiate(hanjas[3], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                hanjas[3].SetActive(true);
+                Images[3].SetActive(true);
+                break;
+            case "쇠 금":
+                //Instantiate(hanjas[4], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                hanjas[4].SetActive(true);
+                Images[4].SetActive(true);
+                break;
+            case "흙 토":
+                //Instantiate(hanjas[5], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                hanjas[5].SetActive(true);
+                Images[5].SetActive(true);
+                break;
+            case "날 일":
+                //Instantiate(hanjas[6], hanjaPos.transform.position, hanjaPos.transform.rotation);
+                hanjas[6].SetActive(true);
+                Images[6].SetActive(true);
                 break;
         }
+        DrawingBoardTexture.clearAll();
         BrushCube.count();
+        
         //Invoke("BrushCube.count()", 1f);
     }
 

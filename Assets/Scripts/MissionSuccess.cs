@@ -9,11 +9,14 @@ public class MissionSuccess : MonoBehaviour
     public GameObject nextPanel;  // 나타낼 패널
     public GameObject destroyPanel; // 없앨 패널
     public GameObject summon; // 소환시킬 무언가
+    public AudioSource sound;
+
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            Invoke("ClearSound", 1.5f);
             Invoke("TeleportAndShow", 2f);
         }
     }
@@ -29,6 +32,11 @@ public class MissionSuccess : MonoBehaviour
         destroyPanel.SetActive(false);
 
         Destroy(gameObject); // 이 스크립트가 있는 게임 오브젝트 삭제
+    }
+
+    void ClearSound()
+    {
+        sound.Play();
     }
 
 }

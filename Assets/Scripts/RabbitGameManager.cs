@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using BeyondLimitsStudios.VRInteractables;
 using UnityEngine.UI;
+using UnityEngine.InputSystem.Composites;
 
 public class RabbitGameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class RabbitGameManager : MonoBehaviour
     public Text showingCharacter;   // UI에 표시할 monster 고유 한자
     public Text remainTimeText;     // 남은 시간 표시하는 텍스트
     public Timer timer;             // 타이머 (남은 시간) 
+    public AudioSource bgm;         // 게임 bgm
 
     public GameObject[] hanjas;
     public GameObject[] Images;
@@ -51,7 +53,7 @@ public class RabbitGameManager : MonoBehaviour
         }
 
         // 남은 시간 표시
-        remainTimeText.text = "남은 시간:" + ((int)timer.remainTime).ToString();
+        remainTimeText.text = "남은 시간: " + ((int)timer.remainTime).ToString();
 
         // 게임 시간 종료(클리어)
         if (timer.remainTime <= 0)
@@ -69,6 +71,7 @@ public class RabbitGameManager : MonoBehaviour
         isGaming = true;
         spawnPoint.SetActive(true);
         timer.isStarting = true;
+        bgm.Play();
     }
 
     // 게임 종료 (미완)
@@ -76,7 +79,7 @@ public class RabbitGameManager : MonoBehaviour
     {
         isGaming = false;
         timer.isStarting = false;
-
+        bgm.Stop();
         Destroy(spawnPoint);
     }
 

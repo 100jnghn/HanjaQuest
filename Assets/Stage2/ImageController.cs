@@ -7,8 +7,8 @@ using UnityEngine.XR.Interaction.Toolkit.UI;
 public class ImageController : MonoBehaviour
 {
     public Canvas canvas; //상호작용할 컴포넌트가 있는 캔버스
-    public Image image;
-    public Image image_activate; //활성화할 캔버스
+    public GameObject panel; // 기존에 보여줄 패널
+    public GameObject panel_activate; // 버튼 클릭 시 활성화할 패널
     public GameObject leftHandController;
     public GameObject rightHandController;
     public Button activateCanvasButton; // 상호작용할 버튼
@@ -46,9 +46,9 @@ public class ImageController : MonoBehaviour
             Debug.LogError("activateCanvasButton is not assigned.");
         }
         // Initially disable the canvas
-        if (image_activate != null)
+        if (panel_activate != null)
         {
-            image_activate.gameObject.SetActive(false);
+            panel_activate.gameObject.SetActive(false);
         }
     }
 
@@ -91,10 +91,10 @@ public class ImageController : MonoBehaviour
     {
         Debug.Log("Activate Canvas button clicked.");
         // Activate the canvas
-        if (image_activate != null)
+        if (panel_activate != null)
         {
-            image.gameObject.SetActive(false);
-            image_activate.gameObject.SetActive(true);
+            panel.gameObject.SetActive(false);
+            panel_activate.gameObject.SetActive(true);
         }
     }
 }

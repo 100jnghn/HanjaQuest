@@ -49,7 +49,7 @@ public class EnterStage : MonoBehaviour
     public void LoadStage2_1()
     {
         // "Stage2-1" ¾À ·Îµå
-        SceneManager.LoadScene("Stage2-1");
+        SceneManager.LoadScene("Stage 2-1");
     }
 
     public void LoadStage2_2()

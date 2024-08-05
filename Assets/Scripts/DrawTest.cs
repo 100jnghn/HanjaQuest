@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,16 @@ public class DrawTest : MonoBehaviour
     public Data data;
     public GameObject canvasPosObject;
     public GameObject hanjaCanvas;
+    public static Action initAnswer;
 
     void Start()
     {
         //initData();
         GenerateCanvas();
+        initAnswer = () =>
+        {
+            initCube();
+        };
     }
     public void initData()
     {
@@ -27,7 +33,19 @@ public class DrawTest : MonoBehaviour
         data.accuracy = 0.0f;
 
     }
-
+    public void initCube()
+    {
+        GameObject[] answerObjects = GameObject.FindGameObjectsWithTag("answer");
+        foreach (GameObject obj in answerObjects)
+        {
+            obj.tag = "miss";
+            Renderer renderer = obj.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                renderer.material.color = Color.white;
+            }
+        }
+    }
     public void GenerateCanvas()
     {
         Vector3 canvasPos = canvasPosObject.transform.position;

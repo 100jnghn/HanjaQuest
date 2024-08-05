@@ -27,4 +27,16 @@ public class NextStage : MonoBehaviour
     {
         SceneManager.LoadScene("StartScene");
     }
+
+
+    public void LoadStudyScene()
+    {
+       SceneManager.LoadScene("BeginnerStudyScene");
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
 }

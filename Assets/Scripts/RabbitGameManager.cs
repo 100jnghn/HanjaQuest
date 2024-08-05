@@ -11,6 +11,7 @@ public class RabbitGameManager : MonoBehaviour
 {
     public Queue<GameObject> monsterQ;  // 씬에 있는 monster를 관리하는 큐
 
+    public GameObject drawHanjaCanvas;  // 한자 그리는 캔버스
     public GameObject clearPanel;   // 클리어 시 띄우는 UI 패널
     public GameObject failpanel;    // 실패 시 띄우는 UI 패널
 
@@ -18,7 +19,9 @@ public class RabbitGameManager : MonoBehaviour
     public CarrotBox carrotBox;     // 당근 상자 -> 당근의 수 count 
     public Text showingCharacter;   // UI에 표시할 monster 고유 한자
     public Text remainTimeText;     // 남은 시간 표시하는 텍스트
+    public Text remainCarrotText;   // 남은 당근 표시하는 텍스트
     public Timer timer;             // 타이머 (남은 시간) 
+
     public AudioSource bgm;         // 게임 bgm
     public AudioSource clearSound;  // 성공 효과음
     public AudioSource failSound;   // 실패 효과음
@@ -45,6 +48,8 @@ public class RabbitGameManager : MonoBehaviour
         {
             showingCharacter.text = "";
         }
+
+        remainCarrotText.text = "남은 당근: " + carrotBox.carrotCount.ToString();
 
         // 당근 다 털리면 게임 종료
         if (carrotBox.carrotCount <= 0)
@@ -89,6 +94,7 @@ public class RabbitGameManager : MonoBehaviour
         isGaming = true;
         spawnPoint.SetActive(true);
         timer.isStarting = true;
+        drawHanjaCanvas.SetActive(true);
         bgm.Play();
     }
 
@@ -97,6 +103,7 @@ public class RabbitGameManager : MonoBehaviour
     {
         isGaming = false;
         timer.isStarting = false;
+        drawHanjaCanvas.SetActive(false);
         bgm.Stop();
         Destroy(spawnPoint);
     }
@@ -150,9 +157,6 @@ public class RabbitGameManager : MonoBehaviour
                 GameObject firstMonster = monsterQ.Peek();
                 Monster nMonster = firstMonster.GetComponent<Monster>();
                 nMonster.die();
-
-                // 정확도 0으로 초기화
-                updateAccuracy.zeroAccuracy();
             }
         }
     }

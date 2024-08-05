@@ -9,18 +9,22 @@ public class Monster : MonoBehaviour
     NavMeshAgent navigation;
     Animator animator;
 
+    public AudioSource moveSound;   // Åä³¢ Á¡ÇÁÇÏ´Â ¼Ò¸®
+    public AudioSource dieSound;    // Åä³¢ Á×´Â ¼Ò¸®
+    public AudioSource eatSound;    // Åä³¢ ¹ä ¸Ô´Â ¼Ò¸®
+
     string[] characterArr =
     {
         "´Þ ¿ù",
         "ºÒ È­",
         "¹° ¼ö",
         "³ª¹« ¸ñ",
-        "ºÒ ±Ý",
+        "¼è ±Ý",
         "Èë Åä",
         "³¯ ÀÏ"
     };
 
-    public GameObject target;
+    GameObject target;
     public string ownCharacter;    
 
 
@@ -48,6 +52,7 @@ public class Monster : MonoBehaviour
         else
         {
             navigation.isStopped = true;
+            stopMoveSound();
         }
     }
 
@@ -60,6 +65,13 @@ public class Monster : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("AttackTarget"))
         {
+            stopMoveSound();
+
+            if (!eatSound.isPlaying)
+            {
+                eatSound.Play();
+            }
+
             transform.LookAt(collision.transform.position);
             animator.SetBool("isAttack", true);
         }
@@ -67,7 +79,33 @@ public class Monster : MonoBehaviour
 
     public void die()
     {
-        animator.SetTrigger("Die");
-        Destroy(gameObject, 1.5f);
+        Debug.Log("Monster Die!");
+
+        navigation.isStopped = true;
+
+        stopMoveSound();
+        stopEatSound();
+
+        dieSound.volume = 2f;
+        dieSound.Play();
+
+        animator.SetBool("isDead", true);
+        Destroy(gameObject, 1f);
+    }
+
+    void stopMoveSound()
+    {
+        if (moveSound.isPlaying)
+        {
+            moveSound.Stop();
+        }
+    }
+
+    void stopEatSound()
+    {
+        if (eatSound.isPlaying)
+        {
+            eatSound.Stop();
+        }
     }
 }

@@ -27,6 +27,9 @@ public class RabbitGameManager : MonoBehaviour
 
     //public GameObject hanjaPos;
 
+    public updateAccuracy updateAccuracy;   // 정확도를 가져오기 위한 변수
+    public float dieScore;                  // dieScore 이상이면 monster 죽습니다
+
     public bool isGaming;
 
 
@@ -75,6 +78,9 @@ public class RabbitGameManager : MonoBehaviour
                 clearSound.Play();
             }
         }
+
+        // dieScore 이상이면 Monster 죽여버림
+        checkAccuracy();
     }
 
     // 게임 시작
@@ -128,10 +134,27 @@ public class RabbitGameManager : MonoBehaviour
 
             showingCharacter.text = nMonster.ownCharacter;
             FindHanja(nMonster.ownCharacter);
-        }
-        
-        
 
+            // 정확도 0으로 초기화
+            updateAccuracy.zeroAccuracy();
+        }
+    }
+
+    // 정확도가 n이상일 때 mosnter 제거
+    void checkAccuracy()
+    {
+        if (isGaming && monsterQ.Count > 0)
+        {
+            if (updateAccuracy.data.accuracy > dieScore)
+            {
+                GameObject firstMonster = monsterQ.Peek();
+                Monster nMonster = firstMonster.GetComponent<Monster>();
+                nMonster.die();
+
+                // 정확도 0으로 초기화
+                updateAccuracy.zeroAccuracy();
+            }
+        }
     }
 
     void FindHanja(string name)

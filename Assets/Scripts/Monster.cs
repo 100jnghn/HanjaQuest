@@ -81,7 +81,12 @@ public class Monster : MonoBehaviour
     {
         Debug.Log("Monster Die!");
 
+        navigation.isStopped = true;
+
         stopMoveSound();
+        stopEatSound();
+
+        dieSound.volume = 2f;
         dieSound.Play();
 
         animator.SetBool("isDead", true);
@@ -93,6 +98,14 @@ public class Monster : MonoBehaviour
         if (moveSound.isPlaying)
         {
             moveSound.Stop();
+        }
+    }
+
+    void stopEatSound()
+    {
+        if (eatSound.isPlaying)
+        {
+            eatSound.Stop();
         }
     }
 }

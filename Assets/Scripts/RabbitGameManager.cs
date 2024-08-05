@@ -78,6 +78,9 @@ public class RabbitGameManager : MonoBehaviour
                 clearSound.Play();
             }
         }
+
+        // dieScore 이상이면 Monster 죽여버림
+        checkAccuracy();
     }
 
     // 게임 시작
@@ -147,6 +150,9 @@ public class RabbitGameManager : MonoBehaviour
                 GameObject firstMonster = monsterQ.Peek();
                 Monster nMonster = firstMonster.GetComponent<Monster>();
                 nMonster.die();
+
+                // 정확도 0으로 초기화
+                updateAccuracy.zeroAccuracy();
             }
         }
     }

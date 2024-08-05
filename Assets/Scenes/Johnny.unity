@@ -20679,7 +20679,7 @@ MonoBehaviour:
   - {fileID: 1465831801}
   - {fileID: 1573863035}
   updateAccuracy: {fileID: 953452192}
-  dieScore: 80
+  dieScore: 7
   isGaming: 0
 --- !u!4 &2128751664
 Transform:
@@ -20715,7 +20715,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 1
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

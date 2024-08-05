@@ -4,11 +4,10 @@ using System.ComponentModel;
 using UnityEngine;
 using TMPro;
 using System;
-using UnityEngine.UI;
 
 public class updateAccuracy : MonoBehaviour
 {
-    public Text accuracy;
+    public TextMeshProUGUI accuracy;
     public Data data; //한자데이터
     //public CurrentGameData Gdata; //지금 당장 현 게임 상태
 

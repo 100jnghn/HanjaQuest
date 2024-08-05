@@ -20678,6 +20678,8 @@ MonoBehaviour:
   - {fileID: 1684953956}
   - {fileID: 1465831801}
   - {fileID: 1573863035}
+  updateAccuracy: {fileID: 953452192}
+  dieScore: 80
   isGaming: 0
 --- !u!4 &2128751664
 Transform:

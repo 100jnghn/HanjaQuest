@@ -79,11 +79,13 @@ public class Monster : MonoBehaviour
 
     public void die()
     {
+        Debug.Log("Monster Die!");
+
         stopMoveSound();
         dieSound.Play();
 
-        animator.SetTrigger("Die");
-        Destroy(gameObject, 1.5f);
+        animator.SetBool("isDead", true);
+        Destroy(gameObject, 1f);
     }
 
     void stopMoveSound()

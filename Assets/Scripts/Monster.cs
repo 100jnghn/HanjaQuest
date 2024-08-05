@@ -12,6 +12,7 @@ public class Monster : MonoBehaviour
     public AudioSource moveSound;   // Åä³¢ Á¡ÇÁÇÏ´Â ¼Ò¸®
     public AudioSource dieSound;    // Åä³¢ Á×´Â ¼Ò¸®
     public AudioSource eatSound;    // Åä³¢ ¹ä ¸Ô´Â ¼Ò¸®
+    public ParticleSystem dieParticle;  // Á×À» ¶§ ÆÄÆ¼Å¬
 
     string[] characterArr =
     {
@@ -91,6 +92,8 @@ public class Monster : MonoBehaviour
 
         animator.SetBool("isDead", true);
         Destroy(gameObject, 1f);
+
+        dieParticle.Play();
     }
 
     void stopMoveSound()

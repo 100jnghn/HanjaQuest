@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/sol.unity
     guid: f583d56101c14fb4ea2ab1e647177ab6
   - enabled: 1
+    path: Assets/Scenes/HanjaQuest/StudyScene/BeginnerStudyScene.unity
+    guid: 9c5d8290e6337d144b1f1b049dbd7965
+  - enabled: 1
     path: Assets/Scenes/HanjaQuest/GameScene/Stage 2/Stage 2-1.unity
     guid: 3bddb64cd9b5b1e4abb9f985b778a4c3
   - enabled: 1

@@ -65,7 +65,7 @@ public class BrushCube : MonoBehaviour
     public void Calculate()
     {
         if (data.totalAnswerCube == 0) data.accuracy = 0;
-
+        Debug.Log("Accuracy");
         data.accuracy = ((float)data.correctCube - ((float)data.wrongCube*DifficultyFactor)) / (float)data.totalAnswerCube * 100f;
        // UnityEngine.Debug.Log(data.accuracy);
         //return data.accuracy;

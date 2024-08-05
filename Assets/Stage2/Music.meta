@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Stage2/Music.meta
 guid: b78e9dae79d306d439c322351a30afff
 folderAsset: yes
+========
+guid: de72a3b31ae7a494da9b98c080497576
+>>>>>>>> main:Assets/Scenes/StartScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

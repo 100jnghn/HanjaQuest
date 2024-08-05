@@ -16,6 +16,12 @@ public class HanjaModel : MonoBehaviour
     private int currentHanjaIndex = 0;  // 현재 표시할 한자 인덱스
     private bool allHanjaComplete = false; // 모든 한자 완료 여부 확인
 
+    public AudioSource Answer;
+    public AudioSource Clear;
+
+    public Music m;
+
+
     void Start()
     {
         DisplayCurrentHanja(); // 게임 시작 시 첫 번째 한자와 이미지를 표시
@@ -72,6 +78,7 @@ public class HanjaModel : MonoBehaviour
     // 다음 한자 및 이미지로 이동
     public void NextHanja()
     {
+        Answer.Play();
         // mapMove 스크립트에서 이동 시작
         if (mapMover != null)
         {
@@ -98,5 +105,7 @@ public class HanjaModel : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         completionCanvas.SetActive(true);
+        m.otherMusic.Stop();
+        Clear.Play();
     }
 }

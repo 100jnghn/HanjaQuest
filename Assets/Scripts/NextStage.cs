@@ -22,4 +22,9 @@ public class NextStage : MonoBehaviour
         // "Stage1-3" ¾À ·Îµå
         SceneManager.LoadScene("SelectStage3");
     }
+
+    public void LoadStartScene()
+    {
+        SceneManager.LoadScene("StartScene");
+    }
 }

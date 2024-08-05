@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb29ae569f0973a4b864a1ee944e6250, type: 3}
   m_Name: temp
   m_EditorClassIdentifier: 
-  totalAnswerCube: 0
+  totalAnswerCube: 341
   correctCube: 0
-  wrongCube: 0
-  missedCube: 0
-  accuracy: 0
+  wrongCube: 17
+  missedCube: 341
+  accuracy: -0.14956011

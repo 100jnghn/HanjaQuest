@@ -1,74 +1,80 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;  // UI를 사용하기 위해 필요
 
 public class HanjaModel : MonoBehaviour
 {
-    /*
-    public LinkData linkData;          // 한자 데이터 연결
-    public Transform modelSpawnPos;    // 모델 스폰 위치
-    public Image completionImage;      // 모든 모델이 스폰된 후 나타날 이미지
+    public GameObject[] hanjas;    // 한자 오브젝트 배열
+    public GameObject[] images;    // 한자에 대응하는 이미지 배열
+    public GameObject completionCanvas; // 모든 한자가 완료된 후 표시할 캔버스
+    public GameObject posObject;
 
-    private int currentIndex = 0;      // 현재 스폰할 인덱스
-    private bool isSpawning = false;   // 스폰 여부를 확인하기 위한 플래그
-    private GameObject currentModel;   // 현재 스폰된 모델을 저장할 변수
+    private int currentHanjaIndex = 0;  // 현재 표시할 한자 인덱스
+    private bool allHanjaComplete = false; // 모든 한자 완료 여부 확인
 
     void Start()
     {
-        isSpawning = false;
-        if (completionImage != null)
-        {
-            completionImage.gameObject.SetActive(false); // 시작 시 이미지를 숨깁니다.
-        }
-    }
-
-    // 버튼 클릭으로 호출되어 스폰 시작
-    public void StartSpawning()
-    {
-        isSpawning = true;
-        SpawnNextHanja(); // 즉시 첫 번째 한자 스폰
+        DisplayCurrentHanja(); // 게임 시작 시 첫 번째 한자와 이미지를 표시
+        completionCanvas.SetActive(false); // 시작 시 완료 캔버스 비활성화
     }
 
     void Update()
     {
-        // 스페이스바를 눌렀을 때 다음 한자 스폰
-        if (isSpawning && Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnNextHanja();
-        }
+        // 정확도가 70 이상일 때 다음 한자로 이동
+
     }
 
-    void SpawnNextHanja()
+    // 현재 인덱스의 한자와 이미지를 화면에 표시
+    public void DisplayCurrentHanja()
     {
-        // 현재 스폰된 모델이 있으면 삭제
-        if (currentModel != null)
+        // 모든 한자와 이미지를 비활성화
+        foreach (var hanja in hanjas)
         {
-            Destroy(currentModel);
+            hanja.SetActive(false);
         }
 
-        // 다음 한자 모델 스폰
-        if (currentIndex < linkData.hanjaDataList.Count)
+        foreach (var image in images)
         {
-            var entry = linkData.hanjaDataList[currentIndex];
-            Data hanjaData = entry.value;
+            image.SetActive(false);
+        }
 
-            // 새로운 모델을 스폰하고 추적
-            currentModel = Instantiate(hanjaData.model, modelSpawnPos.position, modelSpawnPos.rotation);
+        // 현재 인덱스의 한자와 이미지를 활성화
+        if (currentHanjaIndex < hanjas.Length && currentHanjaIndex < images.Length)
+        {
 
-            currentIndex++; // 다음 인덱스로 이동
+            Vector3 position = posObject.transform.position;
+
+            // 한자 모델과 이미지를 posObject 위치로 이동
+            hanjas[currentHanjaIndex].transform.position = position;
+            images[currentHanjaIndex].transform.position = position;
+
+            hanjas[currentHanjaIndex].SetActive(true);
+            images[currentHanjaIndex].SetActive(true);
         }
         else
         {
-            Debug.Log("모든 한자 모델이 스폰되었습니다.");
-            isSpawning = false; // 모든 모델이 스폰되면 스폰 중지
-
-            // 모든 모델이 스폰된 후 이미지 활성화
-            if (completionImage != null)
-            {
-                completionImage.gameObject.SetActive(true);
-            }
+            // 인덱스가 배열의 끝에 도달하면 완료 캔버스 활성화
+            completionCanvas.SetActive(true);
+            allHanjaComplete = true; // 모든 한자가 완료되었음을 표시
         }
     }
-    */
+
+    // 다음 한자 및 이미지로 이동
+    public void NextHanja()
+    {
+        // 다음 한자로 이동하기 전에 정확도를 초기화
+        updateAccuracy.zeroAccuracy?.Invoke();
+
+        if (currentHanjaIndex < hanjas.Length - 1)
+        {
+            currentHanjaIndex++;
+            DisplayCurrentHanja();
+        }
+        else
+        {
+            // 인덱스가 배열의 끝에 도달하면 완료 캔버스 활성화
+            completionCanvas.SetActive(true);
+            allHanjaComplete = true; // 모든 한자가 완료되었음을 표시
+        }
+    }
 }

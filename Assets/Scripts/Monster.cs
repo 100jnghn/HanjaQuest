@@ -19,7 +19,7 @@ public class Monster : MonoBehaviour
         "불 화",
         "물 수",
         "나무 목",
-        "불 금",
+        "쇠 금",
         "흙 토",
         "날 일"
     };

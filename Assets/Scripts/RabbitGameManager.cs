@@ -128,6 +128,9 @@ public class RabbitGameManager : MonoBehaviour
 
             showingCharacter.text = nMonster.ownCharacter;
             FindHanja(nMonster.ownCharacter);
+
+            // 정확도 0으로 초기화
+            updateAccuracy.zeroAccuracy();
         }
         
         

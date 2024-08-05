@@ -7,7 +7,7 @@ public class mapMove : MonoBehaviour
     public GameObject[] targetPosition;
     public bool startMoving = false; // 이동 시작 여부를 제어하는 변수
 
-    public int a = -1;
+    public int a = 0;
 
     void Start()
     {

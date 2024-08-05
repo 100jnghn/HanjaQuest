@@ -20,7 +20,8 @@ public class RabbitGameManager : MonoBehaviour
     public Text remainTimeText;     // 남은 시간 표시하는 텍스트
     public Timer timer;             // 타이머 (남은 시간) 
     public AudioSource bgm;         // 게임 bgm
-
+    public AudioSource clearSound;  // 성공 효과음
+    public AudioSource failSound;   // 실패 효과음
     public GameObject[] hanjas;
     public GameObject[] Images;
 
@@ -45,11 +46,16 @@ public class RabbitGameManager : MonoBehaviour
         // 당근 다 털리면 게임 종료
         if (carrotBox.carrotCount <= 0)
         {
-            isGaming = false;
-            gameOver();
+            if (isGaming)
+            {
+                gameOver();
 
-            // 실패 UI
-            failpanel.SetActive(true);
+                // 실패 UI
+                failpanel.SetActive(true);
+
+                // 실패 sfx
+                failSound.Play();
+            }           
         }
 
         // 남은 시간 표시
@@ -58,10 +64,16 @@ public class RabbitGameManager : MonoBehaviour
         // 게임 시간 종료(클리어)
         if (timer.remainTime <= 0)
         {
-            gameOver();
+            if (isGaming)
+            {
+                gameOver();
 
-            // 클리어 UI
-            clearPanel.SetActive(true);
+                // 클리어 UI
+                clearPanel.SetActive(true);
+
+                // 클리어 sfx
+                clearSound.Play();
+            }
         }
     }
 

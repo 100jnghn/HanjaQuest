@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using BeyondLimitsStudios.VRInteractables;
 using UnityEngine.UI;
 using UnityEngine.InputSystem.Composites;
+using System.Security.Cryptography;
 
 public class RabbitGameManager : MonoBehaviour
 {
@@ -207,7 +208,22 @@ public class RabbitGameManager : MonoBehaviour
         }
         DrawingBoardTexture.clearAll();
         BrushCube.count();
-        
+        DrawTest.initAnswer();
+        /*foreach (Transform child in transform)
+        {
+            Debug.Log(child.gameObject.name);
+            child.gameObject.tag = "miss";
+            Renderer renderer = child.GetComponent<Renderer>();
+            renderer.material.color = Color.white;
+
+        }
+        for (int i = 0; i < 2500; i++)
+        {
+            transform.GetChild(i).gameObject.tag="miss";
+            Renderer renderer = transform.GetChild(i).GetComponent<Renderer>();
+            renderer.material.color = Color.white;
+        }
+        */
         //Invoke("BrushCube.count()", 1f);
     }
 

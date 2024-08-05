@@ -20237,6 +20237,7 @@ MonoBehaviour:
   spacing: 0.01
   data: {fileID: 11400000, guid: 17114c9b20e0b29408decc25c782881e, type: 2}
   canvasPosObject: {fileID: 1574254677}
+  hanjaCanvas: {fileID: 758695631}
 --- !u!114 &2036932766
 MonoBehaviour:
   m_ObjectHideFlags: 0

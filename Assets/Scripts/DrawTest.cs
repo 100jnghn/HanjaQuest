@@ -11,6 +11,7 @@ public class DrawTest : MonoBehaviour
    // public GameObject image;
     public Data data;
     public GameObject canvasPosObject;
+    public GameObject hanjaCanvas;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class DrawTest : MonoBehaviour
                 //image.gameObject.SetActive(true);
             }
         }
+        hanjaCanvas.transform.Rotate(20, 0, 0);
     }
 
 }

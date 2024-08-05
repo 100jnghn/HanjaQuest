@@ -52,6 +52,7 @@ public class Monster : MonoBehaviour
         else
         {
             navigation.isStopped = true;
+            stopMoveSound();
         }
     }
 

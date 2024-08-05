@@ -9,6 +9,10 @@ public class Monster : MonoBehaviour
     NavMeshAgent navigation;
     Animator animator;
 
+    public AudioSource moveSound;   // Åä³¢ Á¡ÇÁÇÏ´Â ¼Ò¸®
+    public AudioSource dieSound;    // Åä³¢ Á×´Â ¼Ò¸®
+    public AudioSource eatSound;    // Åä³¢ ¹ä ¸Ô´Â ¼Ò¸®
+
     string[] characterArr =
     {
         "´Þ ¿ù",
@@ -20,7 +24,7 @@ public class Monster : MonoBehaviour
         "³¯ ÀÏ"
     };
 
-    public GameObject target;
+    GameObject target;
     public string ownCharacter;    
 
 
@@ -60,6 +64,13 @@ public class Monster : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("AttackTarget"))
         {
+            stopMoveSound();
+
+            if (!eatSound.isPlaying)
+            {
+                eatSound.Play();
+            }
+
             transform.LookAt(collision.transform.position);
             animator.SetBool("isAttack", true);
         }
@@ -67,7 +78,18 @@ public class Monster : MonoBehaviour
 
     public void die()
     {
+        stopMoveSound();
+        dieSound.Play();
+
         animator.SetTrigger("Die");
         Destroy(gameObject, 1.5f);
+    }
+
+    void stopMoveSound()
+    {
+        if (moveSound.isPlaying)
+        {
+            moveSound.Stop();
+        }
     }
 }

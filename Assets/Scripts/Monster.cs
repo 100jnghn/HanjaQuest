@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using BeyondLimitsStudios.VRInteractables;
 
 public class Monster : MonoBehaviour
 {
@@ -80,6 +81,7 @@ public class Monster : MonoBehaviour
 
     public void die()
     {
+        BoardScript.SetTex();
         Debug.Log("Monster Die!");
 
         navigation.isStopped = true;
@@ -94,6 +96,7 @@ public class Monster : MonoBehaviour
         Destroy(gameObject, 1f);
 
         dieParticle.Play();
+
     }
 
     void stopMoveSound()

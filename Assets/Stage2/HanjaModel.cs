@@ -1,6 +1,8 @@
 using BeyondLimitsStudios.VRInteractables;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HanjaModel : MonoBehaviour
@@ -9,6 +11,9 @@ public class HanjaModel : MonoBehaviour
     public GameObject[] images;    // 한자에 대응하는 이미지 배열
     public GameObject completionCanvas; // 모든 한자가 완료된 후 표시할 캔버스
     public GameObject posObject;
+    public TMP_Text showingCharacter;   // UI에 표시할 monster 고유 한자
+    public GameObject canvas; // 클리어 후 비활성화 할 캔버스
+    public GameObject canvas2; // 클리어 후 마지막 대사
 
     public updateAccuracy accuracy;
     public mapMove mapMover;
@@ -21,9 +26,9 @@ public class HanjaModel : MonoBehaviour
 
     public Music m;
 
-
     void Start()
     {
+        showingCharacter.text = "";
         DisplayCurrentHanja(); // 게임 시작 시 첫 번째 한자와 이미지를 표시
     }
 
@@ -32,22 +37,18 @@ public class HanjaModel : MonoBehaviour
         // 스페이스바를 눌렀을 때 다음 한자로 이동
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            NextHanja();
+            StartCoroutine(NextHanjaWithDelay());
         }
-        // 정확도가 70 이상일 때 다음 한자로 이동
-/*        if (accuracy.data.accuracy >= 5.0f && !allHanjaComplete)
+        // 정확도가 일정 이상일 때 다음 한자로 이동
+        if (accuracy != null && accuracy.data != null && accuracy.data.accuracy >= 0.2f)
         {
-            NextHanja();
-        }*/
+            StartCoroutine(NextHanjaWithDelay());
+        }
     }
 
     // 현재 인덱스의 한자와 이미지를 화면에 표시
     public void DisplayCurrentHanja()
     {
-        updateAccuracy.zeroAccuracy();
-        DrawingBoardTexture.clearAll();
-        BrushCube.count();
-
         // 모든 한자와 이미지를 비활성화
         foreach (var hanja in hanjas)
         {
@@ -62,12 +63,13 @@ public class HanjaModel : MonoBehaviour
         // 현재 인덱스의 한자와 이미지를 활성화
         if (currentHanjaIndex < hanjas.Length && currentHanjaIndex < images.Length)
         {
-
             Vector3 position = posObject.transform.position;
 
             // 한자 모델과 이미지를 posObject 위치로 이동
             hanjas[currentHanjaIndex].transform.position = position;
             images[currentHanjaIndex].transform.position = position;
+
+            showingCharacter.SetText(images[currentHanjaIndex].name);
 
             hanjas[currentHanjaIndex].SetActive(true);
             images[currentHanjaIndex].SetActive(true);
@@ -78,13 +80,6 @@ public class HanjaModel : MonoBehaviour
     // 다음 한자 및 이미지로 이동
     public void NextHanja()
     {
-        Answer.Play();
-        // mapMove 스크립트에서 이동 시작
-        if (mapMover != null)
-        {
-            mapMover.StartMove();
-        }
-
         if (currentHanjaIndex < hanjas.Length - 1)
         {
             currentHanjaIndex++;
@@ -101,9 +96,30 @@ public class HanjaModel : MonoBehaviour
         }
     }
 
+    private IEnumerator NextHanjaWithDelay()
+    {
+        updateAccuracy.zeroAccuracy();
+        DrawingBoardTexture.clearAll();
+        DrawTest.initAnswer();
+        BrushCube.count();
+
+        // Answer.Play()를 즉시 실행
+        Answer.Play();
+        // mapMove 스크립트에서 이동 시작
+        if (mapMover != null)
+        {
+            mapMover.StartMove();
+        }
+        // 1초 대기 후 NextHanja 실행
+        yield return new WaitForSeconds(1f);
+        NextHanja();
+    }
+
     private IEnumerator ActivateCompletionCanvasAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        canvas.SetActive(false);
+        canvas2.SetActive(true);
         completionCanvas.SetActive(true);
         m.otherMusic.Stop();
         Clear.Play();

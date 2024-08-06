@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnterStage : MonoBehaviour
 {
-    public GameObject StageUI; // Æ÷Å» UI ÆÐ³Î GameObject
+    //public GameObject StageUI; // Æ÷Å» UI ÆÐ³Î GameObject
     
     private void Start()
     {
@@ -14,7 +14,7 @@ public class EnterStage : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -26,7 +26,7 @@ public class EnterStage : MonoBehaviour
         {
             //StageUI.SetActive(false);
         }
-    }
+    }*/
 
     public void LoadStage1_1()
     {
@@ -80,5 +80,11 @@ public class EnterStage : MonoBehaviour
     {
         // "Stage3-3" ¾À ·Îµå
         SceneManager.LoadScene("Stage3-3");
+    }
+
+    public void LoadJohnny()
+    {
+        // "Johnny" ¾À ·Îµå
+        SceneManager.LoadScene("Johnny");
     }
 }

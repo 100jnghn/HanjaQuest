@@ -2639,7 +2639,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a92132e57d5e749b28c705d3963dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageUI: {fileID: 1734886441}
 --- !u!65 &622621753
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2966,7 +2965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a92132e57d5e749b28c705d3963dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageUI: {fileID: 947656271}
 --- !u!65 &680867926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3993,7 +3991,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Who are you?
+  m_text: "\uC5B4\uB514\uC120\uAC00 \uD070 \uC18C\uB9AC\uAC00 \uB0AC\uC5B4\uC694!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7128,7 +7126,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD560\uBA38\uB2C8\uAC00 \uAE38\uC744 \uC783\uC73C\uC168\uB098\uBD10\uC694!"
+  m_text: "\uC544\uC800\uC528\uAC00 \uAE38\uC744 \uC783\uC73C\uC168\uB098\uBD10\uC694!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
   m_sharedMaterial: {fileID: 8146883796110955062, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
@@ -8051,7 +8049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a92132e57d5e749b28c705d3963dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageUI: {fileID: 1259857956}
 --- !u!65 &1760712975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8485,7 +8482,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Let's learn How to Draw!
+  m_text: "\uB3D9\uBB3C \uCE5C\uAD6C\uB4E4\uC774 \uBD80\uD0C1\uC774 \uC788\uB300\uC694!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
   m_sharedMaterial: {fileID: 8146883796110955062, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}

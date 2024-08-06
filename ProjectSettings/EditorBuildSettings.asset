@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/HanjaQuest/GameScene/Stage 2/SelectStage2.unity
     guid: ea7d3c699ece87747a29d97aa392910f
   - enabled: 1
-    path: Assets/Scenes/HanjaQuest/GameScene/Stage 3/Stage 3-1.unity
+    path: Assets/Scenes/HanjaQuest/GameScene/Stage 3/Stage3-1.unity
     guid: 7d958ea587ee9804288963ae157012f2
   - enabled: 1
     path: Assets/Scenes/HanjaQuest/GameScene/Stage 3/SelectStage3.unity

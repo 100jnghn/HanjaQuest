@@ -8,7 +8,7 @@ public class HanjaSkill : MonoBehaviour
 {
     private Animator animator;
     public static Action Activate;
-
+    public GameObject fx;
 
     void Start()
     {
@@ -22,6 +22,13 @@ public class HanjaSkill : MonoBehaviour
     public void ActivateSkill()
     {
         animator.SetTrigger("skillTrigger");
+        fx.SetActive(true);
         DrawingBoardTexture.clearAll();
+
+    }
+    private IEnumerator deActivate()
+    {
+        yield return new WaitForSeconds(2f);
+        fx.SetActive(false);
     }
 }

@@ -14,6 +14,7 @@ public class DrawTest : MonoBehaviour
     public GameObject canvasPosObject;
     public GameObject hanjaCanvas;
     public static Action initAnswer;
+    public static Action initTmp;
 
     void Start()
     {
@@ -22,6 +23,10 @@ public class DrawTest : MonoBehaviour
         initAnswer = () =>
         {
             initCube();
+        };
+        initTmp = () =>
+        {
+            initData();
         };
     }
     public void initData()

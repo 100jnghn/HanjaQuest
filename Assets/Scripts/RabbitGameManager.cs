@@ -18,7 +18,7 @@ public class RabbitGameManager : MonoBehaviour
 
     public GameObject spawnPoint;   // rabbit monster 스폰 위치
     public CarrotBox carrotBox;     // 당근 상자 -> 당근의 수 count 
-    public Text showingCharacter;   // UI에 표시할 monster 고유 한자
+    public TMP_Text showingCharacter;   // UI에 표시할 monster 고유 한자
     public Text remainTimeText;     // 남은 시간 표시하는 텍스트
     public Text remainCarrotText;   // 남은 당근 표시하는 텍스트
     public Timer timer;             // 타이머 (남은 시간) 
@@ -140,7 +140,7 @@ public class RabbitGameManager : MonoBehaviour
             Monster nMonster = firstMonster.GetComponent<Monster>();
             Debug.Log(nMonster.ownCharacter);
 
-            showingCharacter.text = nMonster.ownCharacter;
+            showingCharacter.SetText(nMonster.ownCharacter);
             FindHanja(nMonster.ownCharacter);
 
             // 정확도 0으로 초기화
@@ -173,42 +173,44 @@ public class RabbitGameManager : MonoBehaviour
         {
             case "달 월":
                 hanjas[0].SetActive(true);
-                Images[0].SetActive(true);
+                //Images[0].SetActive(true);
                 break;
             case "불 화":
                 //nstantiate(hanjas[1], hanjaPos.transform.position, hanjaPos.transform.rotation);
                 hanjas[1].SetActive(true);
-                Images[1].SetActive(true);
+                //Images[1].SetActive(true);
                 break;
             case "물 수":
                 //Instantiate(hanjas[2], hanjaPos.transform.position, hanjaPos.transform.rotation);
                 hanjas[2].SetActive(true);
-                Images[2].SetActive(true);
+                //Images[2].SetActive(true);
                 break;
             case "나무 목":
                 //Instantiate(hanjas[3], hanjaPos.transform.position, hanjaPos.transform.rotation);
                 hanjas[3].SetActive(true);
-                Images[3].SetActive(true);
+                //Images[3].SetActive(true);
                 break;
             case "쇠 금":
                 //Instantiate(hanjas[4], hanjaPos.transform.position, hanjaPos.transform.rotation);
                 hanjas[4].SetActive(true);
-                Images[4].SetActive(true);
+                //Images[4].SetActive(true);
                 break;
             case "흙 토":
                 //Instantiate(hanjas[5], hanjaPos.transform.position, hanjaPos.transform.rotation);
                 hanjas[5].SetActive(true);
-                Images[5].SetActive(true);
+                //Images[5].SetActive(true);
                 break;
             case "날 일":
                 //Instantiate(hanjas[6], hanjaPos.transform.position, hanjaPos.transform.rotation);
                 hanjas[6].SetActive(true);
-                Images[6].SetActive(true);
+                //Images[6].SetActive(true);
                 break;
         }
         DrawingBoardTexture.clearAll();
         BrushCube.count();
         DrawTest.initAnswer();
+        DrawTest.initTmp();
+
         /*foreach (Transform child in transform)
         {
             Debug.Log(child.gameObject.name);

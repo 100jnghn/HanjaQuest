@@ -6,7 +6,7 @@ public class BrushCube : MonoBehaviour
     public Data data;
     private Renderer cubeRenderer;
     private bool flag = false;
-    public float DifficultyFactor = 0.03f; //³·¾ÆÁú¼ö·Ï ½¬¿öÁü
+    public float DifficultyFactor = 0.01f; //³·¾ÆÁú¼ö·Ï ½¬¿öÁü
     public static Action count;
     void Start()
     {
@@ -46,7 +46,7 @@ public class BrushCube : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Pen"))
         {
-            //cubeRenderer.material.color = Color.black;
+            cubeRenderer.material.color = Color.black;
             
             if (gameObject.tag =="answer" && flag == false)
             {

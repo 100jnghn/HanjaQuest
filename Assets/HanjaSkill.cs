@@ -22,8 +22,9 @@ public class HanjaSkill : MonoBehaviour
     public void ActivateSkill()
     {
         animator.SetTrigger("skillTrigger");
-        fx.SetActive(true);
+        //fx.SetActive(true);
         DrawingBoardTexture.clearAll();
+        fx.SetActive(true);
 
     }
     private IEnumerator deActivate()

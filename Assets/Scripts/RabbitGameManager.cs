@@ -158,6 +158,7 @@ public class RabbitGameManager : MonoBehaviour
                 GameObject firstMonster = monsterQ.Peek();
                 Monster nMonster = firstMonster.GetComponent<Monster>();
                 nMonster.die();
+                
             }
         }
     }

@@ -35,6 +35,7 @@ public class RabbitGameManager : MonoBehaviour
     public float dieScore;                  // dieScore 이상이면 monster 죽습니다
 
     public bool isGaming;
+    private bool isWaiting = false;
 
 
     void Start()
@@ -151,18 +152,25 @@ public class RabbitGameManager : MonoBehaviour
     // 정확도가 n이상일 때 mosnter 제거
     void checkAccuracy()
     {
-        if (isGaming && monsterQ.Count > 0)
+        if (isGaming && monsterQ.Count > 0 && !isWaiting)
         {
-            if (updateAccuracy.data.accuracy > dieScore)
-            {
-                GameObject firstMonster = monsterQ.Peek();
-                Monster nMonster = firstMonster.GetComponent<Monster>();
-                nMonster.die();
-                
-            }
+            isWaiting = true;
+            StartCoroutine(WaitAndCheckAccuracy());
         }
     }
 
+    private IEnumerator WaitAndCheckAccuracy()
+    {
+        yield return new WaitForSeconds(6f);
+        isWaiting = false;
+
+        if (updateAccuracy.data.accuracy > dieScore)
+        {
+            GameObject firstMonster = monsterQ.Peek();
+            Monster nMonster = firstMonster.GetComponent<Monster>();
+            nMonster.die();
+        }
+    }
     void FindHanja(string name)
     {
         for (int i = 0; i < hanjas.Length; i++)

@@ -14,6 +14,7 @@ public class Monster : MonoBehaviour
     public AudioSource dieSound;    // Åä³¢ Á×´Â ¼Ò¸®
     public AudioSource eatSound;    // Åä³¢ ¹ä ¸Ô´Â ¼Ò¸®
     public ParticleSystem dieParticle;  // Á×À» ¶§ ÆÄÆ¼Å¬
+    
 
     string[] characterArr =
     {
@@ -82,6 +83,15 @@ public class Monster : MonoBehaviour
     public void die()
     {
         BoardScript.SetTex();
+        HanjaSkill.Activate();
+
+        StartCoroutine(DelayedDieSequence());
+
+    }
+    private IEnumerator DelayedDieSequence()
+    {
+        yield return new WaitForSeconds(0.2f);
+
         Debug.Log("Monster Die!");
 
         navigation.isStopped = true;
@@ -96,9 +106,7 @@ public class Monster : MonoBehaviour
         Destroy(gameObject, 1f);
 
         dieParticle.Play();
-
     }
-
     void stopMoveSound()
     {
         if (moveSound.isPlaying)

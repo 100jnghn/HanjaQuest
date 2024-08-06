@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using BeyondLimitsStudios.VRInteractables;
+
 
 public class HanjaModel : MonoBehaviour
 {
@@ -40,7 +42,7 @@ public class HanjaModel : MonoBehaviour
             StartCoroutine(NextHanjaWithDelay());
         }
         // 정확도가 일정 이상일 때 다음 한자로 이동
-        if (accuracy != null && accuracy.data != null && accuracy.data.accuracy >= 0.2f)
+        if (accuracy != null && accuracy.data != null && accuracy.data.accuracy >= 0.3f)
         {
             StartCoroutine(NextHanjaWithDelay());
         }
@@ -98,6 +100,9 @@ public class HanjaModel : MonoBehaviour
 
     private IEnumerator NextHanjaWithDelay()
     {
+        BoardScript.SetTex(); //텍스쳐 저장
+        HanjaSkill.Activate(); //애니메이션 재생
+
         updateAccuracy.zeroAccuracy();
         DrawingBoardTexture.clearAll();
         DrawTest.initAnswer();

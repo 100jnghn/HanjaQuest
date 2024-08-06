@@ -63,7 +63,7 @@ public class DrawTest : MonoBehaviour
                 //image.gameObject.SetActive(true);
             }
         }
-        hanjaCanvas.transform.Rotate(20, 0, 0);
+        //hanjaCanvas.transform.Rotate(20, 0, 0);
     }
 
 }

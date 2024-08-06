@@ -4136,8 +4136,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC0AC\uC545\uD574\uC9C4 \uD1A0\uB07C\uB4E4\uB85C\uBD80\uD130 \uB2F9\uADFC\uC744
-    \uC9C0\uCF1C\uC57C\uD574\uC694!"
+  m_text: "\uD1A0\uAE7D\uC774\uB4E4\uC774 \uB2F9\uADFC\uC5D0 \uB208\uC774 \uB3CC\uC544\uAC00\uC694..!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
   m_sharedMaterial: {fileID: 8146883796110955062, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
@@ -5415,7 +5414,7 @@ Transform:
   m_GameObject: {fileID: 1348780055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1, y: -4.249, z: 77.68}
+  m_LocalPosition: {x: 4.277, y: -4.249, z: 123.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

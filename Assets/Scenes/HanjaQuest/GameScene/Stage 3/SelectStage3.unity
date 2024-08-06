@@ -1426,7 +1426,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD1A0\uAE7D\uC774\uB4E4\uC774 \uB2F9\uADFC\uC5D0 \uB208\uC774 \uB3CC\uC544\uAC00\uC694..!"
+  m_text: "\uB3D9\uBB3C \uCE5C\uAD6C\uB4E4\uC744 \uC18D\uC778 \uC545\uB2F9\uC744
+    \uBB3C\uB9AC\uCCD0\uBD10\uC694!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
   m_sharedMaterial: {fileID: 8146883796110955062, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
@@ -1560,7 +1561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stage 2-1
+  m_text: Stage 3-3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1828,7 +1829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stage 2-1
+  m_text: Stage 3-2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2359,7 +2360,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1276155023}
         m_TargetAssemblyTypeName: EnterStage, Assembly-CSharp
-        m_MethodName: LoadStage3_1
+        m_MethodName: LoadJohnny
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3944,7 +3945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a92132e57d5e749b28c705d3963dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageUI: {fileID: 0}
 --- !u!65 &1101828878
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4136,7 +4136,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD1A0\uAE7D\uC774\uB4E4\uC774 \uB2F9\uADFC\uC5D0 \uB208\uC774 \uB3CC\uC544\uAC00\uC694..!"
+  m_text: "\uC0AC\uC545\uD574\uC9C4 \uD1A0\uB07C\uB4E4\uB85C\uBD80\uD130 \uB2F9\uADFC\uC744
+    \uC9C0\uCF1C\uC57C\uD574\uC694!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
   m_sharedMaterial: {fileID: 8146883796110955062, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
@@ -4661,7 +4662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a92132e57d5e749b28c705d3963dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageUI: {fileID: 0}
 --- !u!65 &1223533355
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4902,7 +4902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a92132e57d5e749b28c705d3963dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StageUI: {fileID: 0}
 --- !u!65 &1276155024
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5414,7 +5413,7 @@ Transform:
   m_GameObject: {fileID: 1348780055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.277, y: -4.249, z: 123.05}
+  m_LocalPosition: {x: 5.049, y: -4.249, z: 77.698}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6469,7 +6468,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD1A0\uAE7D\uC774\uB4E4\uC774 \uB2F9\uADFC\uC5D0 \uB208\uC774 \uB3CC\uC544\uAC00\uC694..!"
+  m_text: "\uB3D9\uBB3C \uCE5C\uAD6C\uB4E4\uC774 \uBCC0\uD574\uBC84\uB9B0 \uC774\uC720\uB97C
+    \uC54C\uC558\uC5B4\uC694!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}
   m_sharedMaterial: {fileID: 8146883796110955062, guid: d68e19ecb55365f4f9bebdae54e741ad, type: 2}

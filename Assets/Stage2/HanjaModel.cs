@@ -25,7 +25,8 @@ public class HanjaModel : MonoBehaviour
 
     public AudioSource Answer;
     public AudioSource Clear;
-
+    private bool isWaiting = false;
+    public GameObject fx;
     public Music m;
 
     void Start()
@@ -42,16 +43,22 @@ public class HanjaModel : MonoBehaviour
             StartCoroutine(NextHanjaWithDelay());
         }
         // 정확도가 일정 이상일 때 다음 한자로 이동
-        if (accuracy != null && accuracy.data != null && accuracy.data.accuracy >= 0.3f)
+        if (accuracy != null && accuracy.data != null && accuracy.data.accuracy >= 0.5f&&isWaiting)
         {
             StartCoroutine(NextHanjaWithDelay());
         }
     }
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(6f);
+        isWaiting = true;
 
+    }
     // 현재 인덱스의 한자와 이미지를 화면에 표시
     public void DisplayCurrentHanja()
     {
         // 모든 한자와 이미지를 비활성화
+        fx.SetActive(false);
         foreach (var hanja in hanjas)
         {
             hanja.SetActive(false);
@@ -61,7 +68,7 @@ public class HanjaModel : MonoBehaviour
         {
             image.SetActive(false);
         }
-
+        DrawingBoardTexture.clearAll();
         // 현재 인덱스의 한자와 이미지를 활성화
         if (currentHanjaIndex < hanjas.Length && currentHanjaIndex < images.Length)
         {
@@ -76,6 +83,7 @@ public class HanjaModel : MonoBehaviour
             hanjas[currentHanjaIndex].SetActive(true);
             images[currentHanjaIndex].SetActive(true);
         }
+        StartCoroutine(Delay());
 
     }
 
@@ -100,6 +108,7 @@ public class HanjaModel : MonoBehaviour
 
     private IEnumerator NextHanjaWithDelay()
     {
+        isWaiting= false;
         BoardScript.SetTex(); //텍스쳐 저장
         HanjaSkill.Activate(); //애니메이션 재생
 

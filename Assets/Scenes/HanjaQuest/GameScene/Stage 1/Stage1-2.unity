@@ -9354,7 +9354,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7183965169669629634, guid: 8e32244b37139f1458e46e367251d1a7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 289697651}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3610472387153580399, guid: 8e32244b37139f1458e46e367251d1a7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 8e32244b37139f1458e46e367251d1a7, type: 3}
 --- !u!224 &1297990159 stripped
 RectTransform:
@@ -13794,7 +13797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 1886283354}
-  m_MoveSpeed: 2
+  m_MoveSpeed: 1.5
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1

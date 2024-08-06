@@ -302,11 +302,18 @@ namespace BeyondLimitsStudios
             /// </summary>
             public void ClearBoard()
             {
+                Texture2D storedSourceTexture = sourceTexture;
+
                 computeShader.SetVector("Color", backgroundColor);
 
                 computeShader.SetTexture(4, "tex", renderTexture);
 
-                computeShader.Dispatch(4, renderTexture.width / 8 + 1, renderTexture.height / 8 + 1, 1);              
+                computeShader.Dispatch(4, renderTexture.width / 8 + 1, renderTexture.height / 8 + 1, 1);
+
+                if (storedSourceTexture != null)
+                {
+                    SetImage(storedSourceTexture);
+                }
             }
                         
             public void StartDrawing(Marker mk, Vector3 pos, float size, Color color)

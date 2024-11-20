@@ -1,5 +1,5 @@
 # HanjaQuest
-- VR 한자 학습&게임
+- VR 한자 학습 게임
 <br>
 <br>
 

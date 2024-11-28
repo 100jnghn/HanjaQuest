@@ -34,8 +34,8 @@ VR기기를 이용하여 한자를 따라서 적어보고 한자에 알맞은 �
 [학습 하기]
 - 다양한 한자를 선택하여 획순을 확인할 수 있는 이미지를 보며 붓(컨트롤러)을 통해 직접 써보고 정확도를 확인하여 본인이 쓴 한자가 올바르게 적은 것인지 확인할 수 있다.
 ![image](https://github.com/user-attachments/assets/23359d18-4f5e-4f18-8704-b3734b61637e)
-![image](https://github.com/user-attachments/assets/26a367d2-bae8-4504-bc1d-889884ed3b45)
 ![image](https://github.com/user-attachments/assets/534ad98e-49d8-42ca-bc25-265674ac0282)
+![image](https://github.com/user-attachments/assets/26a367d2-bae8-4504-bc1d-889884ed3b45)
 <br>
 
 [게임하기]

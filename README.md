@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/3e7975c0-78b1-432c-a312-ed74226834c8)
 # HanjaQuest
 - VR 한자 학습 게임
 - 2024 메타버스 경진대회 출품
@@ -42,13 +41,17 @@ VR기기를 이용하여 한자를 따라서 적어보고 한자에 알맞은 �
 [게임하기]
 - 단계적으로 stage를 구성해 다양한 콘텐츠로 제작된 스토리텔링 형식의 게임을 통해 학습한 한자를 복습할 수 있다.
 <br>
-Stage 예시<br>
+#### Stage 예시<br>
 Stage 1 : 튜토리얼<br>
+
 ![image](https://github.com/user-attachments/assets/c1b60144-0b6e-4d80-b8cd-57075516adfd)
+
 ![image](https://github.com/user-attachments/assets/b7fc5853-924a-49a7-a59b-83ba1438654b)
+<br>
 
 Stage 2 : 지도를 보며 방향에 대한 한자를 학습하기<br>
 ![image](https://github.com/user-attachments/assets/66ca11f8-4f8f-4410-a0b3-e8511ef5e98f)
+<br>
 
 Stage 3 : 마을의 당근을 뻇으러 온 토끼를 한자를 통해 물리치기<br>
 ![image](https://github.com/user-attachments/assets/c8a64a78-f12b-4330-a862-6febc07d1d84)
